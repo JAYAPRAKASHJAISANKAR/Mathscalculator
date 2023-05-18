@@ -1,27 +1,22 @@
-let display = document.getElementById("display");
-
-function appendNumber(num) {
-  display.value += num;
+function appendValue(value) {
+  var expressionInput = document.getElementById("expression");
+  expressionInput.value += value;
 }
 
-function appendSymbol(symbol) {
-  display.value += symbol;
-}
-
-function clearDisplay() {
-  display.value = "";
-}
-
-function deleteLast() {
-  display.value = display.value.slice(0, -1);
+function clearExpression() {
+  var expressionInput = document.getElementById("expression");
+  expressionInput.value = "";
 }
 
 function calculate() {
-  let result;
+  var expression = document.getElementById("expression").value;
+  var result;
+
   try {
-    result = eval(display.value);
+    result = eval(expression);
   } catch (error) {
-    result = "Error";
+    result = "Invalid expression";
   }
-  display.value = result;
+
+  document.getElementById("result").innerHTML = "Result: " + result;
 }
