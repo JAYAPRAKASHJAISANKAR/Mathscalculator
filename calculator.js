@@ -1,16 +1,16 @@
 function appendValue(value) {
-  var expressionInput = document.getElementById("expression");
+  let expressionInput = document.getElementById("expression");
   expressionInput.value += value;
 }
 
 function clearExpression() {
-  var expressionInput = document.getElementById("expression");
+  let expressionInput = document.getElementById("expression");
   expressionInput.value = "";
 }
 
 function calculate() {
-  var expression = document.getElementById("expression").value;
-  var result;
+  let expression = document.getElementById("expression").value;
+  let result;
 
   try {
     result = eval(expression);
